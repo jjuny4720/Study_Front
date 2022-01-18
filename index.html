@@ -14,10 +14,59 @@
         div {
             text-decoration: underline;
         }
+        span{
+          color:red;
+        }
         /*스타일(CSS)를 HTML  문서 안에서 작성하는 경우에 사용  */
     </style>
 </head>
 <body>
+  <div></div>
+  <!-- 특별한 의미가 없는 구분을 위한 요소(division)-->
+  <h1></h1>
+  <!-- 제목을 의미하는 요소(Heading) -->
+  <p></p>
+  <!-- 문장을 의미하는 요소(Paragraph) -->
+  <img src="" alt="">
+  <!-- 이미지를 삽입하는 요소(Image), src로 경로,  alt는 삽입할 이미지의 필수 속성 -->
+  <ul>
+    <li></li>
+  </ul>
+  <!-- ul은 순서가 필요없는 목록의 집합을 의미
+  li는 목록 내 각 항목(List item) 
+ul의 자식은 li는 무조건 있어야됨(모두 블록요소)-->
+  <a href="www.naver.com">네이버</a>
+  <a href="www.naver.com" target="_blank">네이버</a>
+  <!-- 다른/같은 페이지로 이동하는 하이퍼링크를 지정하는 요소 
+  target은 링크의 표시(브라우저 탭)의 위치를 표시해줌-->
+  <span>동해물</span>과 백두산이 <br/>마르고 닳도록<br>
+  <!-- 글자의범위(span), 줄바꿈 요소(break)-->
+  <input type="text" value="HEROPY!">   
+  <input type="text" placeholder="이름을입력하세요">
+  <input type="text" disabled>
+    <!-- 인라인요소이면서 블록요소인것 = Inline-block
+  inlince요소지만 상자요소의 특징을 사용할 수 있음 
+사용자가 데이터를 입력하는 요소
+value는 미리 입력된값(데이터)
+placeholer는 사용자가 입력해야될 값에 대한 힌트
+disabled 입력 불가-->
+  <br>
+  <label>
+    <input type="checkbox"/> Apple
+  </label>
+  <label>
+    <input type="checkbox"checked>Banana
+  </label>
+  <!-- checked 미리 체크 -->
+  <br>
+  <label>
+    <input type="radio" name="fruits"/> Apple
+    <input type="radio" name="fruits"/> Banana
+  <table>
+    
+  </table>
+  </label>
+<br>
   <a href="https://naver.com">Naver</a>
   <a href="/about">About</a>
   <a href="/login">Login</a>
