@@ -1,5 +1,8 @@
-div{
+/* div{
   width: 95px;
   height: 100px;
   background: url("../images/logo.png");
+} */
+body{
+  font-size: 20px;
 }
