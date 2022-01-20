@@ -8,15 +8,17 @@
      <!-- viewport는 모바일 환경을 가르키는데 웹 페이지의 가로 너비를 모바일 환경의 가로너비와 일치 시키거나 웹 사이트 출력될때 확대, 축소여부를 어떻게 결정할껀지 명시하는 개념 -->
     <title>HEROPY</title>
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
     <!-- javascript 파일을 가져오거나 html 문서안에서 작성하는 경우 2가지로 사용가능 -->
+    <!-- defer 속성은, HTML구조가 준비된 후에 javascript를 해석하겠다는 의미 
+    defer없이 쓸경우 자기 자신라인까지만 코드를 해석하는 함-->
     <style>
         div {
             text-decoration: underline;
         }
-        span{
+        /* span{
           color:red;
-        }
+        } */
         /*스타일(CSS)를 HTML  문서 안에서 작성하는 경우에 사용  */
     </style>
 </head>
@@ -76,17 +78,17 @@ disabled 입력 불가-->
 tr : 행을 지정하는 요소
 td : 열을 지정하는 요소(Table Data)-->
   <a href="https://naver.com">Naver</a>
-  <a href="/about">About</a>1
+  <a href="/about">About</a>
   <a href="/login">Login</a>
     <!-- alt는 출력할 텍스트가 없을때 대신 할 수 있는 대체 텍스트(네트워크가 불안정하거나 이미지 출력이 안될때만 가능) -->
   <br>
   <br>
-  <div>
+  <!-- <div>
     <h1>오늘의 날씨</h1>
     <h2>오늘의 날씨</h2>
     <h3>오늘의 날씨</h3>
     <img src="data:image/jpeg;base64,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" alt="태풍">
-  </div>
+  </div> -->
   <ol>
     <li>사과</li>
     <li>딸기</li>
@@ -95,5 +97,77 @@ td : 열을 지정하는 요소(Table Data)-->
   </ol>
   <a href="https://naver.com" target="_blank">Naver</a>
   <a href="https://google.com">google</a>
+  <!-- 애국가 -->
+  <p>
+    동해물과 백두산이 마르고 닳도록<br/>
+    하느님이 보우하사 <div class="a">우리나라</div> 만세
+  </p>
+  <input type="text" value="heropy"
+  placeholder="이름을 입력하세요!" />
+ <label>
+  <input type="radio"  name="fruits"/>
+  Apple
+ </label>
+ <label>
+  <input type="radio" name="fruits"/>
+  Banana
+ </label>
+ <table>
+   <tr>
+     <td>A</td>
+     <td>B</td>
+     <td>B</td>
+   </tr>
+   <tr>
+     <td>C</td>
+     <td colspan="2">D</td>
+   </tr>
+ </table>
+ <a href="https://naver.com" target="_blank" title="네이버로 이동">NAVER</a>
+ <a href="https://naver.com" target="_blank" style="color:aqua">NAVER</a>
+ <br>
+<span>동해물</span>과 백두산이 마르고 닳도록
+하느님이 보우하사 <span class="red">우리나라</span>만세
+<br>
+<span id="abc">동해물</span>과 백두산이 마르고 닳도록
+하느님이 보우하사 <span class="red">우리나라</span>만세
+<div data-fruit-name="apple">사과</div>
+<div data-fruit-name="banana">바나나</div>
+ <!-- 전역 속성 : 어떤 태그든 사용할 수 있는 태그
+title : 요소의 정보나 설명을 지정 
+style : 요소에 적용할 css를 지정
+class : 요소를 지칭하는 중복 가능한 이름
+id : 요소를 지칭하는 고유한 이름(중복되면 안됨)
+data : 요소를 데이터를 지정 <태그 data-이름="데이터">-->
+<progress value="10" min="0" max="100"></progress><br>
+<meter min="0" max="100"  low="20" high="65" optimum="15" value="80"></meter>
+<!-- 미세먼지로 농도 보여주는걸로 사용 가능 -->
+<details>
+  <summary>What is the best 반찬?</summary>
+  <span>김치지!@</span>
+</details>
+<!-- 신기하다 -->
+<input type="week">
+<input type="time">
+<!-- 달력/ 시간을 선택가능 -->
+<picture>
+  <source srcset="">
+</picture>
+<!-- 브라우저가 이미지 형식을 지원안할 경우 다른대안이 가능한 태그 -->
+<br>
+<label for="movie">What is your favourite movie?</label>
+<input type="text" list="movie-options"/>
+<datalist id="movie-options">
+  <option value="Dune" />
+  <option value="Dune1" />
+  <option value="Dune2" />
+  <option value="matrix 1" />
+  <option value="matrix 2" />
+  <option value="matrix 3" />
+  <option value="iron man" />
+  <option value="iron man2" />
+  <option value="iron man3" />
+</datalist>
+<!-- 옵션 선택  -->
 </body>
 </html>

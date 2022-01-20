@@ -1,0 +1,54 @@
+/* css 선언 방식
+내장 방식  /   링크 방식   /인라인 방식 / @import방식 
+내장 방식 : <style></style>의 내용(contents)으로 스타일을 작성하는 방식 Html안에서 바로 가능
+<style>
+  div{
+    color: red;
+  }
+</style>
+    단점 : 유지보수 측면에서 단점이 많음
+
+인라인 방식 : 요소의 style속성에 직접 스타일을 작성하는 방식(선택자 없음)
+<div style="color: red; margin: 20px;"></div>
+    단점 : 지나치게 우선하기 때문에 적용되어 있기 때문에 수정이 불가능
+    
+링크 방식 : <link />로 외부 CSS 문서를 가져와서 연결하는 방식(병렬방식)
+<link rel="stylesheet" href="./css/main.css>
+
+@import 방식 : css의 @import규칙으로 css 문서 안에서 또 다른 css문서를 가져와 연결하는 방식(직렬방식)
+<link rel="stylesheet" href="./css/main.css>*/
+
+/* 선택자 {속성: 값; 속성: 값; 속성: 값;}
+선택자 : 스타일을 적용할 대상 
+속성 : 스타일의 종류
+값 : 스타일의 값
+선택자 속성은 값이다*/
+@import url("./box.css"); /*box.css-> */
+div{
+  font-size: 100px;
+  margin:20px;
+} 
+*{
+  color:red;
+}
+/* 전체선택자 *(에스터리스크) : 모든 선택자들을 선택하는 전체 선택자 */
+li{
+  font-size: 20px;
+}
+/* 태그선택자 : 태그 이름이 ABC인 요소 선택*/
+.orange{
+  color:darkorange
+}
+/* 클래스 선택자 : HTML class 속성의 값이 ABC인 요소 선택 */
+#orange{
+  background-color: gold;
+}
+/* 아이디 선택자 : HTML id 속성의 값이 ABC인 요소 선택 */
+span.orange{
+  color:lawngreen
+}
+/* 일치 선택자 : 선택자 ABC와 XYZ를 동시에 만족하는 요소 선택 */
+ul > .orange{
+  background-color: mediumvioletred;
+}
+/* 자식 선택자 : 선택자 ABC의 자식 요소 XYZ 선택. */

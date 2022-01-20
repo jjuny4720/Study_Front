@@ -6,3 +6,23 @@
 body{
   font-size: 20px;
 }
+.a{
+  color: red;
+  background-color: black;
+}
+table{
+
+}
+tr{
+
+}
+td{
+  border: 1px solid red;
+  padding: 10px;
+}
+.red{
+  color: red;
+}
+#abc{
+  color: blue;
+}
