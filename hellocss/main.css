@@ -28,9 +28,9 @@ div{
   font-size: 100px;
   margin:20px;
 } 
-*{
+/* *{
   color:red;
-}
+} */
 /* 전체선택자 *(에스터리스크) : 모든 선택자들을 선택하는 전체 선택자 */
 li{
   font-size: 20px;
@@ -51,4 +51,21 @@ span.orange{
 ul > .orange{
   background-color: mediumvioletred;
 }
-/* 자식 선택자 : 선택자 ABC의 자식 요소 XYZ 선택. */
+/* 자식 선택자 : 선택자 ABC의 자식 요소 XYZ 선택. 
+정확하게 하기위해서*/
+ul > .banana{
+  color: blue;
+}
+/* 하위 선택자 : 선택자 ABC의 하위 요소 XYZ 선택. '띄어쓰기'가 선택자의 기호!
+제일 자주 쓸거 같아  */
+div .jun{
+  color:brown;
+}
+/* 인접 형제 선택자 : 선택자 ABC의 다음 형제 요소 XYZ 하나를 선택. */
+.l + li{
+  color: green;
+}
+/* 일반 형제 선택자 : 선택자 ABC의 다음 형제 요소 XYZ모두를 선택. */
+.ll ~li{
+  color:blue;
+}

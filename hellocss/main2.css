@@ -1,0 +1,150 @@
+
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: #ffa500;
+  transition: 1s;
+}
+.box2{
+  font-size: 80px;
+}
+.box3{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.box5{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.box:hover{
+  width: 300px;
+  background-color: royalblue;
+}
+/* 가상 클래스 선택자
+hover : 선택자 ABC요소에 마우스 커서가 올라가 있는 동안 선택. 
+active : 선택자 ABC요소에 마우스를 클릭하고 있는 동안 선택.
+focus : 선택자 ABC요소가 포커스되면 선택 (실제로 focus가 가능한 요소만 사용 가능)
+FIRST CHILD : 선택자 ABC가 형제 요소 중 첫째라면 선택.(일치 선택자)
+LAST CHILD : 선택자 ABC가 형제 요소 중 막내라면 선택.
+NTH CHILD : 선택자 ABC가 형제 요소 중 (n)째라면 선택.(n이라는 키워드를 넣을 수 있음 n은 0부터 시작)
+  2n : 짝수
+  2n+1 : 홀수
+NOT : 선택자XYZ가 아닌 ABC요소 선택. 괄호 안을 제외한 선택자들*/
+.box2:hover{
+  background-color: red;
+  transition: 1s;
+}
+.box3:active{
+  background-color: black;
+  transition: 1s;
+}
+.box4:focus{
+  background-color: darkorange;
+}
+.box5:focus{
+  background-color: deeppink;
+}
+.fruits span:first-child{
+  color:red;
+}
+.fruits h3:last-child{
+  color:green;
+}
+.fruits *:nth-child(2n){
+  color:gold;
+}
+.fruits *:nth-child(-n+3){
+  color:pink;
+}
+.fruits *:not(span){
+  font-size:50px;
+}
+/* 가상 요소 선택자
+BEFORE : 선택자 ABC 요소의 내부 앞에 내용(content)을 삽입
+가상의 인라인요소를 만들어서 내부 앞쪽에 내용(content)을 삽입
+AFTER : 선택자 ABC요소의 내부 뒤에 내용(content)을 삽입. */
+/* .box::before{
+  content: "앞!";
+} */
+.box::after{
+  content:"";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: cyan;
+}
+/* 속성 선택자[ABC]
+ATTR :  속성ABC을 포함한 요소 선택
+ATTR : VALUE 속성 ABC을 포함하고 값이 XYZ인 요소 선택.*/
+[text]{/*속성 명시(span,div 등등)*/
+  color:red;
+}
+[type="password"]{
+  background-color: orange;
+}
+/* 스타일 상속 : 모두 글자/문자 관련 속성들(모든은 아님) */
+.animal {
+  color:red;
+}
+/* inherit: 스타일이 상속되지 않는 조건도 강제로 상속하게 만드는 조건*/
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: orange;
+}
+.child {
+  width:100px;
+  height: inherit;
+  background-color: inherit;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+}
+/* 우선 순위 : 같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언의 css속성을 우선 적용할지 결정하는 방법
+1. 점수가 높은 선언이 우선함!
+2. 점수가 같으면, 가장 마지막에 해석된 선언이 우선함!
+!important - 무한대 
+인라인 선언(html안에) - 1000점
+id선택자 - 100점
+class선택자 - 10점
+태그 선택자 - 1점
+전체 선택자 - 0점*/
+div {
+  color:red;
+}
+#color_yellow{
+  color:yellow;
+}
+.color_green{
+  color:green;
+}
+div{
+  color:blue;
+}
+*{
+  color:darkblue;
+}
+body{
+  color:violet;
+}
+div.hello{
+  color:green;
+}
+.hello{
+  font-size: 100px;
+  color:red;
+}
+*{
+/* 0점 */
+}
+div{
+/* 1점 */
+}
+.hello{
+/* 10점 */
+}
+#hello{
+/* 100점 */
+}
