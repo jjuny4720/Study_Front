@@ -1,0 +1,43 @@
+/* 속성
+박스 모델(여백), 글꼴(두께, 종류), 문자, 
+배경(이미지, 색상), 배치(원하는 위치), 
+플렉스(정렬, 수평정렬), 전환(요소의 전,후 상태 애니메이션), 
+변환(회전하거나 이동시키는것/2D,3D), 띄움(요소를 띄우는 것/사진주변에 문자가 흐르는 것), 
+애니메이션(복잡한 애니메이션) , 그리드(행과 열의 구조를 가지는것, 레이아웃),
+다단(여러가지 단으로 구성하는것) , 필터(요소를 블러처리, 흑백효과 등을 주는 것) */
+
+div{
+  width: auto;
+  height: auto;
+  background-color: orange;
+}
+span{/* 인라인요소 : 글자를 제어하는 요소이기 때문에 높이, 넓이를 조절 할수 없음 */
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+/* width /height
+요소의 가로/세로 너비
+auto(기본값:요소에 이미 들어있는 속성의 값) : 브라우저가 너비를 계산 
+단위 : px, em, vw등 단위로 지정
+
+max-width, max-height
+요소가 커질 수 있는 최대 가로/세로 너비
+none : 최대 너비 제한 없음
+단위 : px, em, vw 등 단위로 지정
+
+min-width, min-height
+요소가 작아질 수 있는 최소 가로/세로 너비
+0 : 최소 너비 제한 없음
+단위 : px,em,vw등 단위로 지정*/
+
+.parent{
+  width: 300px;
+  height: 200px;
+  background-color: royalblue;
+}
+.child{
+  min-width: 400px;
+  height: 100px;
+  background-color: orange;
+}
