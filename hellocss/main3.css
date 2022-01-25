@@ -5,7 +5,9 @@
 변환(회전하거나 이동시키는것/2D,3D), 띄움(요소를 띄우는 것/사진주변에 문자가 흐르는 것), 
 애니메이션(복잡한 애니메이션) , 그리드(행과 열의 구조를 가지는것, 레이아웃),
 다단(여러가지 단으로 구성하는것) , 필터(요소를 블러처리, 흑백효과 등을 주는 것) */
-
+body{
+  height: 10000px;
+}
 /* div{
   width: auto;
   height: auto;
@@ -259,9 +261,21 @@ fixed : 이미지가 뷰포트에 고정, 스크롤 x*/
   background-attachment: fixed;
 }
 
+/* position : 요소의 위치 지정 기준 [top/bottom/left/right/z-index]
+static : 기준 없음
+relative : 요소 자신을 기준
+absolute : 위치 상 부모 요소를 기준(위치 상 부모 요소를 꼭 확인해야 함)
+fixed : 뷰포트를 기준 */
+.wrap{
+  width: 400px;
+  height: 300px;
+  background-color: tomato;
+  position: relative;
+}
 .container2{
   width: 300px;
   background-color: royalblue;
+  position: relative;
 }
 
 .container2 .item2{
@@ -275,8 +289,118 @@ fixed : 이미지가 뷰포트에 고정, 스크롤 x*/
 .container2 .item2:nth-child(2){
   width: 140px;
   height: 70px;
+  bottom: 30px;
+  right: 60px;
 }
 .container2 .item2:nth-child(3){
   width: 70px;
   height: 120px;
+}
+/* 요소 쌓임 순서(Stack order) : 어떤 요소가 사용자와 더 가깝게 있는지 결정
+1. 요소에 position 속성의 값이 있는 경우 위에 쌓임(기본값 static 제외)
+2. 1번 조건이 같은 경우, z-index 속성의 숫자 값이 높을 수록 위에 쌓임
+3. 1번과 2번 조건까지 같은 경우, HTML의 다음 구조일 수록 위에 쌓임 
+
+z-index : 요소의 쌓임 정도를 지정
+auto : 부모 요소와 동일한 쌓임 정도
+숫자 : 숫자가 높을 수록 위에 쌓임*/
+.container3{
+  width:300px;
+  background-color: royalblue;
+  position: relative;
+  /* (위치상의 부모 요소로 바꾸기 위해 사용) */
+}
+.container3 .item3{
+  width: 100px;
+  height: 100px;
+  border: 4px dashed red;
+  background-color: orange;
+}
+.container3 .item3:nth-child(1){
+  position: relative;
+}
+.container3 .item3:nth-child(2){
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.container3 .item3:nth-child(3){
+  
+}
+/* 요소의 display가 변경됨
+position 속성의 값으로 absolute, fixed 가 지정된 요소는 display속성이 block으로 변경됨 */
+.span2{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  font-size: 40px;
+  position:absolute;
+}
+
+/* 플렉스(정렬)  
+display : flex container의 화면 출력 특성
+flex : 블럭 요소와 같이 Flex Container 정의
+inline-flex : 인라인 요소와 같이 Flex Container 정의
+
+flex-direction : 주 축을 설정
+row : 행 축(좌 -> 우)
+row-reverse : 행 축 (우 -> 좌)
+column : 열 축(위 -> 아래)
+column-reverse : 열 축(아래 -> 위)
+
+flex-wrap : flex items 묶음(줄 바꿈)여부
+no wrap : 묶음(줄 바꿈) 없음
+wrap : 여러 줄로 묶음
+
+justify-content : 주 축의 정렬 방법
+flex-start : flex items를 시작점으로 정렬(기본값)
+flex-end : flex items를 끝점으로 정렬
+center : flex items를 가운데 정렬
+
+align-content : 교차 축의 여러 줄 정렬 방법
+stretch : flex items를 시작점으로 정렬
+flex-start : flex items를 시작점으로 정렬
+flex-end : flex items를 끝점으로 정렬
+center : flex items를 가운데 정렬
+
+align-items : 교차 축의 한줄 정렬 방법(한줄일 때)
+stretch : flex items를 교차 축으로 늘림
+flex-start : flex items를 각 줄의 시작점으로 정렬
+flex-end : flex items를 각 줄의 끝점으로 정렬
+center : flex items를 각 줄의 가운데 정렬
+
+order : flex item의 순서
+0 : 순서없음
+숫자 : 숫자가 작을수록 먼저
+
+flex-grow : flex item의 증가 너비 비율
+0 : 증가 비율 없음
+숫자 : 증가 비율
+
+flex-shrink : flex item의 감소 너비 비율
+1 : flex container 너비에 따라 감소 비율 적용(기본값)
+숫자 : 감소 비율
+
+flex-basis : flex item의 공간 배분 전 기본 너비
+auto : 요소의 content 너비
+단위 : px, em, rem 등 단위로 지정*/
+
+.container4{
+  width: 500px;
+  height: 300px;
+  background-color: royalblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container4 .item4{
+  width: 100px;
+  height: 100px;
+  border: 3px dashed red;
+  background-color: orange;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.container4 .item4:nth-child(3){
+  flex-grow: 2;
 }
