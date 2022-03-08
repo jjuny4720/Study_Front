@@ -118,6 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+var _this = this;
+
 /*//산술 연산자(arithmetic operator)
 
 console.log(1 + 2)
@@ -211,19 +213,17 @@ else {
 } */
 // 반복문 (For statement)
 // for (시작조건; 종료조건; 변화조건) {}
-
-/*const ulEl = document.querySelector('ul')
-
-for (let i = 0; i < 10; i+= 1){
-  const li = document.createElement('li')
-  li.textContent = `list-${i + 1}`
-  if((i+1) % 2 === 0){
-    li.addEventListener('click', function (){
-      console.log(li.textContent)
-    })
-  }
-  ulEl.appendChild(li)
-}*/
+// const ulEl = document.querySelector('ul')
+// for (let i = 0; i < 10; i+= 1){
+//   const li = document.createElement('li')
+//   li.textContent = `행-${i + 1}`
+//   if((i+1) % 2 === 0){
+//     li.addEventListener('click', function (){
+//       console.log(li.textContent)
+//     })
+//   }
+//   ulEl.appendChild(li)
+// }
 
 /*//변수 유효범위(Variable Scope)
 //var, let, const
@@ -324,17 +324,68 @@ h1El.addEventListener('click', () => {
 })*/
 //콜백(Callback)
 //함수의 인수로 사용되는 함수
-//setTimeout(함수, 시간)
-function timeout(Callback) {
-  setTimeout(function () {
-    console.log('Heropy!');
-    Callback();
-  }, 3000);
-}
 
-timeout(function () {
-  console.log('Done!');
-});
+/*//setTimeout(함수, 시간)
+
+function timeout(Callback) {
+  setTimeout(() => {
+    console.log('Heropy!')
+    Callback()
+  }, 3000)
+}
+timeout(() => {
+  console.log('Done!')
+})*/
+// const amy = {
+//   firstName: 'Amy',
+//   lastName: 'Clarke',
+//   getFullName: function (){
+//     return `${this.firstName} ${this.lastName}`
+//   }
+// }
+// console.log(amy.getFullName())
+// function user(first, last){
+//   this.firstName = first
+//   this.lastName = last
+//   }
+//   user.prototype.getFullName = function () {
+//     return `${this.firstName} ${this.lastName}`
+//   }
+// const heropy = new user('Heropy', 'Park')
+// const amy = new user('Amy', 'Clarke')
+// const neo = new user ('Neo', 'smith')
+// console.log(heropy.getFullName())
+// console.log(amy.getFullName())
+// console.log(neo.getFullName())
+// const sunny = {
+//   name: 'sunkyu',
+//   age : 27,
+// }
+// sunny.haircolor='black';
+// sunny['hobby'] = 'game';
+// delete sunny.name;
+// console.log(sunny)
+//this
+// 일반(normal) 함수는 호출 위치에서 따라 this 정의!
+//  화살표(Arrow) 함수는 자신이 선언된 함수범위에서 this 정의!
+var heropy = {
+  name: 'Heropy',
+  normal: function normal() {
+    console.log(this.name);
+  },
+  arrow: function arrow() {
+    console.log(_this.name);
+  }
+};
+heropy.normal();
+heropy.arrow();
+var amy = {
+  name: 'Amy',
+  normal: heropy.normal,
+  arrow: heropy.arrow
+};
+amy.normal();
+amy.arrow();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -363,7 +414,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52465" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49731" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
