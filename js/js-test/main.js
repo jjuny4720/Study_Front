@@ -270,23 +270,118 @@ timeout(() => {
 // 일반(normal) 함수는 호출 위치에서 따라 this 정의!
 //  화살표(Arrow) 함수는 자신이 선언된 함수범위에서 this 정의!
 
-const heropy={
-  name: 'Heropy',
-  normal: function () {
-    console.log(this.name)
-  },
-  arrow: () => {
-    console.log(this.name)
-  }
-}
-heropy.normal()
-heropy.arrow()
+// const heropy={
+//   name: 'Heropy',
+//   normal: function () {
+//     console.log(this.name)
+//   },
+//   arrow: () => {
+//     console.log(this.name)
+//   }
+// }
+// heropy.normal()
+// heropy.arrow()
 
-const amy = {
-  name: 'Amy',
-  normal: heropy.normal,
-  arrow: heropy.arrow
-}
+// const amy = {
+//   name: 'Amy',
+//   normal: heropy.normal,
+//   arrow: heropy.arrow
+// }
 
-amy.normal()
-amy.arrow()
+// amy.normal()
+// amy.arrow()
+ // 파스칼 케이스, 생성자 함수
+// function User(name) {
+//   this.name = name
+// }
+// User.prototype.normal = function () {
+//   console.log(this.name)
+// }
+// User.prototype.arrow = () => {
+//   console.log(this.name)
+// }
+
+// const heropy = new User('Heropy')
+
+// heropy.normal()
+// heropy.arrow() 
+
+// const timer = {
+//   name: 'Heropy!!',
+//   timeout : function () {
+//     setTimeout(() => {
+//       console.log(this.name)
+//     }, 2000)
+//   }
+// }
+// timer.timeout()
+
+// const sunny={
+//   name: "sunny",
+//   age : 30
+// };
+
+// for(b in sunny){  
+//   console.log(b)
+// }
+
+// function user(first, last){
+//   this.firstName = first
+//   this.lastName = last
+//   }
+//   user.prototype.getFullName = function () {
+//     return `${this.firstName} ${this.lastName}`
+//   }
+
+// class User{
+//   constructor(first,last) {
+//     this.firstName = first
+//     this.lastName = last
+//   }
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`
+//   }
+// }
+
+// const heropy = new User('Heropy', 'Park')
+// const amy = new User('Amy', 'Clarke')
+// const neo = new User ('Neo', 'smith')
+
+// console.log(heropy.getFullName())
+
+// class Vehicle {
+//   constructor(name, wheel) {
+//     this.name = name
+//     this.wheel = wheel
+//   }
+// }
+// const myVehicle = new Vehicle('운송수단, 2')
+// console.log(myVehicle)
+
+// class Bicycle extends Vehicle {
+//   constructor(name, wheel) {
+//     super(name, wheel)
+//   }
+// } 
+// const myBicycle = new Bicycle('삼천리', 2)
+// const daughtersBicycle = new Bicycle('세발', 3)
+// console.log(myBicycle)
+// console.log(daughtersBicycle)
+
+// class Car extends Vehicle {
+//   constructor(name, wheel, license) {
+//     super(name, wheel)
+//     this.license = license
+//   }
+// }
+// const myCar = new Car('벤츠', 4, true)
+// const daughterscar = new Car('포르쉐', 4, false)
+
+// console.log(myCar)
+// console.log(daughterscar)'
+
+console.log(score);
+
+var score = 80;
+
+console.log(score);
