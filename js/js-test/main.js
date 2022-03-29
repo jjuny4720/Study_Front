@@ -378,10 +378,74 @@ timeout(() => {
 // const daughterscar = new Car('포르쉐', 4, false)
 
 // console.log(myCar)
-// console.log(daughterscar)'
+// console.log(daughterscar)
 
-console.log(score);
+// const numbers = [1, 2, 3, 4]
+// const fruits = ['Apple', 'Banana', 'Cherry']
 
-var score = 80;
+// console.log(numbers[1])
+// console.log(fruits[2]) //[2] indexing(인덱싱)
 
-console.log(score);
+// const numbers = [1, 2, 3, 4]
+// const fruits  = ['Apple', 'Banana', 'Cherry']
+
+// console.log(numbers.length)
+// console.log([1,23,33].length)
+
+// console.log(numbers.concat(fruits)) //forEach 반복적으로 동작하는 method는 callback
+// fruits.forEach(function (fruit, i){
+//   console.log(fruit, i)
+// })
+
+// const a = fruits.forEach((fruit, i) => {
+//   console.log(`${fruit}-${i}`)
+// })
+// console.log(a)
+
+// const b = fruits.map( (fruit, i) => {
+//   return {
+//     id : i,
+//     name : fruit
+//   }
+// })
+// console.log(b)
+
+// const c = fruits.map( (fruit, i) => ({
+//   id : i,
+//   name : fruit
+// }))
+// console.log(c)
+
+// const d = numbers.map(number =>   number <3)
+// console.log(d)
+
+// const e = numbers.filter(number => number < 3)
+// console.log(e)
+
+// const f = fruits.find(fruit =>/^B/.test(fruit))
+// console.log(f)
+
+// const g = fruits.findIndex(fruit =>  /^C/.test(fruit))
+// console.log(g)
+
+// const h = numbers.includes(3)
+// console.log(h)
+
+// const i = fruits.includes('joon')
+// console.log(i)
+
+// numbers.push(5)
+// console.log(numbers)
+
+// numbers.unshift(0)
+// console.log(numbers)
+
+// numbers.reverse()
+
+// console.log(numbers)
+
+// numbers.splice(2,1, 999)
+// console.log(numbers)
+
+// fruits.splice(10, 0, 'Orange')
+// console.log(fruits)
