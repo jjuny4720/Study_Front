@@ -449,3 +449,55 @@ timeout(() => {
 
 // fruits.splice(10, 0, 'Orange')
 // console.log(fruits)
+
+// const userAge = {
+//   name: 'joon',
+//   age:99
+// }
+// const userEmail = {
+//   name: 'joon',
+//   email: 'jjuny4720@naver.com'
+// }
+
+// const target = Object.assign({}, userAge, userEmail)
+// console.log(target)
+// console.log(userAge)
+// console.log(target == userAge)
+
+// const a = { k : 123}
+// const b = { k : 123}
+// console.log(a == b)
+
+// const user = {
+//   name: 'joon',
+//   age : 99,
+//   email : 'jjuny4720@naver.com',
+//   address : 'USA'
+// }
+
+// // const keys = Object.keys(user)
+// // console.log(keys)
+// // //['name','age','email']
+
+// // console.log(user['email'])
+
+// // const values = keys.map(key => user[key])
+// // console.log(values)
+// const {name: jun, age, email, address = 'Korea'} = user
+// // E.g , user.address
+
+// console.log(`사용자의 이름은 ${jun}입니다.`)
+// console.log(`${jun}의 나이는 ${age}세입니다.`)
+// console.log(address)
+
+// const fruits = ['Apple', 'Banana', 'Cherry']
+// const [ , ,b] = fruits
+// console.log(b)
+
+const fruits = ['Apple', 'Banana', 'Cherry', 'Orange']
+console.log(fruits)
+console.log(...fruits)
+// console. log('Apple', 'Banana, 'Cherry')
+
+const toObject = (a, b, ...c) => ({ a, b, c })
+console.log(toObject(...fruits))
