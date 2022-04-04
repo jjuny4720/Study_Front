@@ -1,3 +1,4 @@
+
 /*//산술 연산자(arithmetic operator)
 
 console.log(1 + 2)
@@ -494,10 +495,64 @@ timeout(() => {
 // const [ , ,b] = fruits
 // console.log(b)
 
-const fruits = ['Apple', 'Banana', 'Cherry', 'Orange']
-console.log(fruits)
-console.log(...fruits)
-// console. log('Apple', 'Banana, 'Cherry')
+// const fruits = ['Apple', 'Banana', 'Cherry', 'Orange']
+// console.log(fruits)
+// console.log(...fruits)
+// // console. logㅋ('Apple', 'Banana, 'Cherry')
 
-const toObject = (a, b, ...c) => ({ a, b, c })
-console.log(toObject(...fruits))
+// const toObject = (a, b, ...c) => ({ a, b, c })
+// console.log(toObject(...fruits))
+
+//데이터 불변성
+// 원시 데이터 : string, number, boolean, undefined, null
+// 참조형 데이터 : object, array, function
+// let a = 1
+// let b = 4
+// console.log(a, b, a === b)
+// b = a
+// console.log(a, b, a === b)
+// a = 7
+// console.log(a, b, a === b)
+// let c = 1
+// console.log(b, c, b ===c)
+
+// let a = { k: 1 }
+// let b = { k: 1 }
+// console.log(a, b, a ===b )
+// a.k = 7
+// b = a
+// console.log(a, b, a === b)
+// a.k = 2
+// console.log(a, b, a ===b)
+// let c = b
+// console.log(a, b, c, a === c)
+// a.k = 2
+// console.log(a, b, a === b)
+// c.k = 9
+// console.log(a, b, c,  b=== c)
+
+//1:                    2:                     3:                           4:                             
+// 얇은 복사(Shallow copy), 깊은 복사(Deep copy)
+// import _ from 'lodash'
+
+// const user = {
+//   name: 'joon',
+//   age: 99,
+//   emails: ['jjuny4720@naver.com']
+// }
+// const copyUser = _.cloneDeep(user)
+// console.log(copyUser === user)
+
+// user.age = 22
+// console.log('user', user)
+// console.log('copyUser', copyUser)
+
+// console.log('-----')
+// console.log('-----')
+
+// user.emails.push('jjuny4720@gmail.com')
+// console.log(user.emails === copyUser.emails)
+
+import _ from 'lodash'
+import getType from './getType'
+import getRandom from './getRandom'
