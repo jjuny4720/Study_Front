@@ -232,12 +232,23 @@ console.log(boxEl.textContent);
 // const boxEl=document.querySelector('.box');
 // console.log(boxEl.textContent);
 
-import axios from 'axios'
+// import axios from 'axios'
 
-function fetchMovies() {
-  axios.get('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')
-  .then((response) => {
-    console.log(response)
-  })
+// function fetchMovies() {
+//   axios.get('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')
+//   .then((response) => {
+//     console.log(response)
+//   })
+// }
+// fetchMovies()
+function repeat(n, f) {
+  for (var i = 0; i < n; i++){
+    f(i);
+  }
 }
-fetchMovies()
+
+var logAll = function (i) {
+  console.log(i)
+}
+
+repeat(5, logAll);
