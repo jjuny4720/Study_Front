@@ -241,14 +241,19 @@ console.log(boxEl.textContent);
 //   })
 // }
 // fetchMovies()
-function repeat(n, f) {
-  for (var i = 0; i < n; i++){
-    f(i);
-  }
-}
+// function repeat(n, f) {
+//   for (var i = 0; i < n; i++){
+//     f(i);
+//   }
+// }
 
-var logAll = function (i) {
-  console.log(i)
-}
+// var logAll = function (i) {
+//   console.log(i)
+// }
 
-repeat(5, logAll);
+// repeat(5, logAll);
+// var add = add=>(x,y) {
+//   return x + y;
+// };
+
+// console.log(add(2,5));
